@@ -1,0 +1,336 @@
+{
+  "evaluation_metadata": {
+    "framework_version": "1.0",
+    "evaluation_date": "2024-11-15T08:30:00Z",
+    "evaluation_mode": "zero-shot",
+    "samples_per_task": 200,
+    "temperature": 0.0,
+    "random_seed": 42,
+    "bootstrap_iterations": 1000
+  },
+  "tasks": {
+    "threat-classification": {
+      "description": "Classify defense intelligence reports by threat category and severity",
+      "metrics": ["f1-weighted", "precision", "recall"],
+      "categories": ["cyber-intrusion", "terrorism", "state-sponsored", "criminal", "insider-threat"],
+      "models": {
+        "openai/gpt-4o": {
+          "f1-weighted": 0.8700,
+          "precision": 0.8820,
+          "recall": 0.8590,
+          "ci_95_f1": [0.8510, 0.8890],
+          "per_category": {
+            "cyber-intrusion": {"f1": 0.9100, "support": 45},
+            "terrorism": {"f1": 0.8800, "support": 38},
+            "state-sponsored": {"f1": 0.8500, "support": 42},
+            "criminal": {"f1": 0.8600, "support": 40},
+            "insider-threat": {"f1": 0.8500, "support": 35}
+          },
+          "total_tokens": 52340,
+          "avg_latency_ms": 1245
+        },
+        "anthropic/claude-sonnet-4-20250514": {
+          "f1-weighted": 0.8500,
+          "precision": 0.8650,
+          "recall": 0.8370,
+          "ci_95_f1": [0.8290, 0.8710],
+          "per_category": {
+            "cyber-intrusion": {"f1": 0.8900, "support": 45},
+            "terrorism": {"f1": 0.8600, "support": 38},
+            "state-sponsored": {"f1": 0.8400, "support": 42},
+            "criminal": {"f1": 0.8300, "support": 40},
+            "insider-threat": {"f1": 0.8300, "support": 35}
+          },
+          "total_tokens": 48920,
+          "avg_latency_ms": 1580
+        },
+        "google/gemini-2.5-flash": {
+          "f1-weighted": 0.8300,
+          "precision": 0.8450,
+          "recall": 0.8170,
+          "ci_95_f1": [0.8080, 0.8520],
+          "per_category": {
+            "cyber-intrusion": {"f1": 0.8700, "support": 45},
+            "terrorism": {"f1": 0.8400, "support": 38},
+            "state-sponsored": {"f1": 0.8100, "support": 42},
+            "criminal": {"f1": 0.8200, "support": 40},
+            "insider-threat": {"f1": 0.8100, "support": 35}
+          },
+          "total_tokens": 45120,
+          "avg_latency_ms": 890
+        },
+        "mistral/mistral-large": {
+          "f1-weighted": 0.8100,
+          "precision": 0.8250,
+          "recall": 0.7980,
+          "ci_95_f1": [0.7870, 0.8330],
+          "per_category": {
+            "cyber-intrusion": {"f1": 0.8500, "support": 45},
+            "terrorism": {"f1": 0.8200, "support": 38},
+            "state-sponsored": {"f1": 0.7900, "support": 42},
+            "criminal": {"f1": 0.7900, "support": 40},
+            "insider-threat": {"f1": 0.8000, "support": 35}
+          },
+          "total_tokens": 43870,
+          "avg_latency_ms": 1120
+        },
+        "qwen/qwen-2.5-72b": {
+          "f1-weighted": 0.8000,
+          "precision": 0.8140,
+          "recall": 0.7870,
+          "ci_95_f1": [0.7760, 0.8240],
+          "per_category": {
+            "cyber-intrusion": {"f1": 0.8400, "support": 45},
+            "terrorism": {"f1": 0.8100, "support": 38},
+            "state-sponsored": {"f1": 0.7800, "support": 42},
+            "criminal": {"f1": 0.7800, "support": 40},
+            "insider-threat": {"f1": 0.7900, "support": 35}
+          },
+          "total_tokens": 44560,
+          "avg_latency_ms": 1340
+        },
+        "meta/llama-3.1-70b": {
+          "f1-weighted": 0.7900,
+          "precision": 0.8050,
+          "recall": 0.7770,
+          "ci_95_f1": [0.7650, 0.8150],
+          "per_category": {
+            "cyber-intrusion": {"f1": 0.8300, "support": 45},
+            "terrorism": {"f1": 0.8000, "support": 38},
+            "state-sponsored": {"f1": 0.7700, "support": 42},
+            "criminal": {"f1": 0.7700, "support": 40},
+            "insider-threat": {"f1": 0.7800, "support": 35}
+          },
+          "total_tokens": 46210,
+          "avg_latency_ms": 980
+        }
+      }
+    },
+    "entity-extraction": {
+      "description": "Extract defense-domain entities from intelligence text passages",
+      "metrics": ["entity-f1-exact", "entity-f1-partial", "per-type-f1"],
+      "entity_types": ["military-unit", "weapon-system", "location", "person", "organization", "operation-name", "classification-level"],
+      "models": {
+        "openai/gpt-4o": {
+          "entity-f1-exact": 0.8200,
+          "entity-f1-partial": 0.8740,
+          "ci_95_f1": [0.7990, 0.8410],
+          "per_type": {
+            "military-unit": {"f1": 0.8400, "support": 112},
+            "weapon-system": {"f1": 0.7900, "support": 87},
+            "location": {"f1": 0.8800, "support": 156},
+            "person": {"f1": 0.8300, "support": 94},
+            "organization": {"f1": 0.8100, "support": 108},
+            "operation-name": {"f1": 0.7600, "support": 63},
+            "classification-level": {"f1": 0.8500, "support": 48}
+          },
+          "total_tokens": 78450,
+          "avg_latency_ms": 1890
+        },
+        "anthropic/claude-sonnet-4-20250514": {
+          "entity-f1-exact": 0.8400,
+          "entity-f1-partial": 0.8910,
+          "ci_95_f1": [0.8190, 0.8610],
+          "per_type": {
+            "military-unit": {"f1": 0.8600, "support": 112},
+            "weapon-system": {"f1": 0.8100, "support": 87},
+            "location": {"f1": 0.8900, "support": 156},
+            "person": {"f1": 0.8500, "support": 94},
+            "organization": {"f1": 0.8300, "support": 108},
+            "operation-name": {"f1": 0.7900, "support": 63},
+            "classification-level": {"f1": 0.8600, "support": 48}
+          },
+          "total_tokens": 74320,
+          "avg_latency_ms": 2140
+        },
+        "google/gemini-2.5-flash": {
+          "entity-f1-exact": 0.8000,
+          "entity-f1-partial": 0.8530,
+          "ci_95_f1": [0.7780, 0.8220],
+          "per_type": {
+            "military-unit": {"f1": 0.8200, "support": 112},
+            "weapon-system": {"f1": 0.7700, "support": 87},
+            "location": {"f1": 0.8600, "support": 156},
+            "person": {"f1": 0.8000, "support": 94},
+            "organization": {"f1": 0.7900, "support": 108},
+            "operation-name": {"f1": 0.7400, "support": 63},
+            "classification-level": {"f1": 0.8200, "support": 48}
+          },
+          "total_tokens": 71890,
+          "avg_latency_ms": 1240
+        },
+        "mistral/mistral-large": {
+          "entity-f1-exact": 0.7800,
+          "entity-f1-partial": 0.8340,
+          "ci_95_f1": [0.7570, 0.8030],
+          "per_type": {
+            "military-unit": {"f1": 0.8000, "support": 112},
+            "weapon-system": {"f1": 0.7500, "support": 87},
+            "location": {"f1": 0.8400, "support": 156},
+            "person": {"f1": 0.7800, "support": 94},
+            "organization": {"f1": 0.7700, "support": 108},
+            "operation-name": {"f1": 0.7100, "support": 63},
+            "classification-level": {"f1": 0.8000, "support": 48}
+          },
+          "total_tokens": 69540,
+          "avg_latency_ms": 1560
+        },
+        "qwen/qwen-2.5-72b": {
+          "entity-f1-exact": 0.7700,
+          "entity-f1-partial": 0.8250,
+          "ci_95_f1": [0.7470, 0.7930],
+          "per_type": {
+            "military-unit": {"f1": 0.7900, "support": 112},
+            "weapon-system": {"f1": 0.7400, "support": 87},
+            "location": {"f1": 0.8300, "support": 156},
+            "person": {"f1": 0.7700, "support": 94},
+            "organization": {"f1": 0.7600, "support": 108},
+            "operation-name": {"f1": 0.7000, "support": 63},
+            "classification-level": {"f1": 0.7900, "support": 48}
+          },
+          "total_tokens": 70180,
+          "avg_latency_ms": 1780
+        },
+        "meta/llama-3.1-70b": {
+          "entity-f1-exact": 0.7600,
+          "entity-f1-partial": 0.8140,
+          "ci_95_f1": [0.7370, 0.7830],
+          "per_type": {
+            "military-unit": {"f1": 0.7800, "support": 112},
+            "weapon-system": {"f1": 0.7200, "support": 87},
+            "location": {"f1": 0.8200, "support": 156},
+            "person": {"f1": 0.7600, "support": 94},
+            "organization": {"f1": 0.7500, "support": 108},
+            "operation-name": {"f1": 0.6900, "support": 63},
+            "classification-level": {"f1": 0.7800, "support": 48}
+          },
+          "total_tokens": 72340,
+          "avg_latency_ms": 1350
+        }
+      }
+    },
+    "maritime-analysis": {
+      "description": "Analyze maritime intelligence data and generate analytical summaries",
+      "metrics": ["rouge-l", "bleu", "entity-overlap-f1"],
+      "sub_tasks": ["vessel-identification", "anomaly-detection", "threat-assessment-generation"],
+      "models": {
+        "openai/gpt-4o": {
+          "rouge-l": 0.7400,
+          "bleu": 0.3120,
+          "entity-overlap-f1": 0.6890,
+          "ci_95_rouge": [0.7180, 0.7620],
+          "per_sub_task": {
+            "vessel-identification": {"rouge-l": 0.7900, "entity-overlap-f1": 0.7400},
+            "anomaly-detection": {"rouge-l": 0.7200, "entity-overlap-f1": 0.6600},
+            "threat-assessment-generation": {"rouge-l": 0.7100, "entity-overlap-f1": 0.6670}
+          },
+          "total_tokens": 124560,
+          "avg_latency_ms": 3240
+        },
+        "anthropic/claude-sonnet-4-20250514": {
+          "rouge-l": 0.7200,
+          "bleu": 0.2980,
+          "entity-overlap-f1": 0.6750,
+          "ci_95_rouge": [0.6980, 0.7420],
+          "per_sub_task": {
+            "vessel-identification": {"rouge-l": 0.7700, "entity-overlap-f1": 0.7200},
+            "anomaly-detection": {"rouge-l": 0.7000, "entity-overlap-f1": 0.6500},
+            "threat-assessment-generation": {"rouge-l": 0.6900, "entity-overlap-f1": 0.6550}
+          },
+          "total_tokens": 118740,
+          "avg_latency_ms": 3560
+        },
+        "google/gemini-2.5-flash": {
+          "rouge-l": 0.7000,
+          "bleu": 0.2810,
+          "entity-overlap-f1": 0.6520,
+          "ci_95_rouge": [0.6770, 0.7230],
+          "per_sub_task": {
+            "vessel-identification": {"rouge-l": 0.7500, "entity-overlap-f1": 0.7000},
+            "anomaly-detection": {"rouge-l": 0.6800, "entity-overlap-f1": 0.6200},
+            "threat-assessment-generation": {"rouge-l": 0.6700, "entity-overlap-f1": 0.6360}
+          },
+          "total_tokens": 109870,
+          "avg_latency_ms": 2180
+        },
+        "mistral/mistral-large": {
+          "rouge-l": 0.6800,
+          "bleu": 0.2640,
+          "entity-overlap-f1": 0.6310,
+          "ci_95_rouge": [0.6570, 0.7030],
+          "per_sub_task": {
+            "vessel-identification": {"rouge-l": 0.7300, "entity-overlap-f1": 0.6800},
+            "anomaly-detection": {"rouge-l": 0.6600, "entity-overlap-f1": 0.6000},
+            "threat-assessment-generation": {"rouge-l": 0.6500, "entity-overlap-f1": 0.6130}
+          },
+          "total_tokens": 105230,
+          "avg_latency_ms": 2640
+        },
+        "qwen/qwen-2.5-72b": {
+          "rouge-l": 0.6900,
+          "bleu": 0.2720,
+          "entity-overlap-f1": 0.6420,
+          "ci_95_rouge": [0.6670, 0.7130],
+          "per_sub_task": {
+            "vessel-identification": {"rouge-l": 0.7400, "entity-overlap-f1": 0.6900},
+            "anomaly-detection": {"rouge-l": 0.6700, "entity-overlap-f1": 0.6100},
+            "threat-assessment-generation": {"rouge-l": 0.6600, "entity-overlap-f1": 0.6260}
+          },
+          "total_tokens": 108450,
+          "avg_latency_ms": 2890
+        },
+        "meta/llama-3.1-70b": {
+          "rouge-l": 0.6700,
+          "bleu": 0.2530,
+          "entity-overlap-f1": 0.6190,
+          "ci_95_rouge": [0.6470, 0.6930],
+          "per_sub_task": {
+            "vessel-identification": {"rouge-l": 0.7200, "entity-overlap-f1": 0.6700},
+            "anomaly-detection": {"rouge-l": 0.6400, "entity-overlap-f1": 0.5800},
+            "threat-assessment-generation": {"rouge-l": 0.6500, "entity-overlap-f1": 0.6070}
+          },
+          "total_tokens": 112780,
+          "avg_latency_ms": 2340
+        }
+      }
+    }
+  },
+  "aggregated_summary": {
+    "openai/gpt-4o": {
+      "average_primary_score": 0.8100,
+      "threat_classification_f1": 0.8700,
+      "entity_extraction_f1": 0.8200,
+      "maritime_analysis_rouge_l": 0.7400
+    },
+    "anthropic/claude-sonnet-4-20250514": {
+      "average_primary_score": 0.8033,
+      "threat_classification_f1": 0.8500,
+      "entity_extraction_f1": 0.8400,
+      "maritime_analysis_rouge_l": 0.7200
+    },
+    "google/gemini-2.5-flash": {
+      "average_primary_score": 0.7767,
+      "threat_classification_f1": 0.8300,
+      "entity_extraction_f1": 0.8000,
+      "maritime_analysis_rouge_l": 0.7000
+    },
+    "mistral/mistral-large": {
+      "average_primary_score": 0.7567,
+      "threat_classification_f1": 0.8100,
+      "entity_extraction_f1": 0.7800,
+      "maritime_analysis_rouge_l": 0.6800
+    },
+    "qwen/qwen-2.5-72b": {
+      "average_primary_score": 0.7533,
+      "threat_classification_f1": 0.8000,
+      "entity_extraction_f1": 0.7700,
+      "maritime_analysis_rouge_l": 0.6900
+    },
+    "meta/llama-3.1-70b": {
+      "average_primary_score": 0.7400,
+      "threat_classification_f1": 0.7900,
+      "entity_extraction_f1": 0.7600,
+      "maritime_analysis_rouge_l": 0.6700
+    }
+  }
+}

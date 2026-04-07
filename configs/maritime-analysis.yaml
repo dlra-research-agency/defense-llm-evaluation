@@ -1,0 +1,49 @@
+task:
+  name: maritime-analysis
+  description: Analyze maritime intelligence data and generate analytical summaries
+  version: "1.0"
+
+model_configs:
+  - provider: openai
+    model: gpt-4o
+    temperature: 0.0
+    max_tokens: 1024
+  - provider: anthropic
+    model: claude-sonnet-4-20250514
+    temperature: 0.0
+    max_tokens: 1024
+  - provider: google
+    model: gemini-2.5-flash
+    temperature: 0.0
+    max_tokens: 1024
+  - provider: mistral
+    model: mistral-large-latest
+    temperature: 0.0
+    max_tokens: 1024
+  - provider: alibaba
+    model: qwen-2.5-72b
+    temperature: 0.0
+    max_tokens: 1024
+  - provider: meta
+    model: llama-3.1-70b
+    temperature: 0.0
+    max_tokens: 1024
+
+evaluation:
+  mode: zero-shot
+  metrics:
+    - rouge-l
+    - bleu
+    - entity-overlap-f1
+  n_samples: 200
+  sub_tasks:
+    - vessel-identification
+    - anomaly-detection
+    - threat-assessment-generation
+  data_sources:
+    - ais-signals
+    - vessel-registry
+    - patrol-reports
+  generation:
+    min_length: 100
+    max_length: 500

@@ -1,0 +1,9 @@
+You are a defense intelligence analyst. Classify the following intelligence report into one of these threat categories: cyber-intrusion, terrorism, state-sponsored, criminal, insider-threat.
+
+Also assign a severity level: critical, high, medium, low, informational.
+
+Report:
+{text}
+
+Respond in JSON format:
+{"category": "...", "severity": "...", "confidence": 0.0-1.0, "reasoning": "..."}

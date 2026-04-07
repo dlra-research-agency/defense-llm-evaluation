@@ -1,0 +1,21 @@
+You are a defense intelligence analyst specializing in named entity recognition. Extract all defense-relevant entities from the following text passage.
+
+Entity types to extract:
+- military-unit: Military units, divisions, battalions, squadrons (e.g., "3rd Infantry Division", "SEAL Team Six")
+- weapon-system: Weapons, platforms, and defense systems (e.g., "F-35A Lightning II", "S-400 Triumf", "HIMARS")
+- location: Geographic locations, bases, facilities (e.g., "Strait of Malacca", "Camp Humphreys")
+- person: Persons of interest, commanders, officials (e.g., "Gen. Mark Milley")
+- organization: Government agencies, militant groups, defense contractors (e.g., "DARPA", "Hezbollah")
+- operation-name: Named military operations or exercises (e.g., "Operation Inherent Resolve", "RIMPAC 2024")
+- classification-level: Security classification markings (e.g., "TOP SECRET//SCI", "CONFIDENTIAL")
+
+Text:
+{text}
+
+Respond in JSON format:
+{
+  "entities": [
+    {"text": "exact text span", "type": "entity-type", "start": 0, "end": 10},
+    ...
+  ]
+}

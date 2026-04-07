@@ -1,0 +1,49 @@
+task:
+  name: entity-extraction
+  description: Extract defense-domain entities from intelligence text passages
+  version: "1.0"
+
+model_configs:
+  - provider: openai
+    model: gpt-4o
+    temperature: 0.0
+    max_tokens: 512
+  - provider: anthropic
+    model: claude-sonnet-4-20250514
+    temperature: 0.0
+    max_tokens: 512
+  - provider: google
+    model: gemini-2.5-flash
+    temperature: 0.0
+    max_tokens: 512
+  - provider: mistral
+    model: mistral-large-latest
+    temperature: 0.0
+    max_tokens: 512
+  - provider: alibaba
+    model: qwen-2.5-72b
+    temperature: 0.0
+    max_tokens: 512
+  - provider: meta
+    model: llama-3.1-70b
+    temperature: 0.0
+    max_tokens: 512
+
+evaluation:
+  mode: zero-shot
+  metrics:
+    - entity-f1-exact
+    - entity-f1-partial
+    - per-type-f1
+  n_samples: 200
+  entity_types:
+    - military-unit
+    - weapon-system
+    - location
+    - person
+    - organization
+    - operation-name
+    - classification-level
+  matching:
+    partial_overlap_threshold: 0.5
+    case_sensitive: false

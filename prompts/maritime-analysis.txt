@@ -1,0 +1,26 @@
+You are a maritime intelligence analyst. Analyze the following maritime data, which may include AIS (Automatic Identification System) signals, vessel registry records, and patrol reports.
+
+Your analysis should cover:
+1. Vessel identification: Identify all vessels referenced, including MMSI, IMO numbers, flag state, and vessel type where available.
+2. Anomaly detection: Flag any unusual behavior patterns such as AIS gaps, unexpected route deviations, dark vessel activity, spoofed identities, or sanctions evasion indicators.
+3. Threat assessment: Based on the data, provide a threat assessment for the maritime area of interest, noting any vessels or patterns that warrant further investigation.
+
+Data:
+{text}
+
+Respond in JSON format:
+{
+  "vessels": [
+    {"identifier": "...", "type": "...", "flag_state": "...", "status": "normal|suspicious|threat"},
+    ...
+  ],
+  "anomalies": [
+    {"description": "...", "severity": "critical|high|medium|low", "vessel_id": "...", "coordinates": "..."},
+    ...
+  ],
+  "threat_assessment": {
+    "overall_level": "critical|high|medium|low|none",
+    "summary": "...",
+    "recommended_actions": ["..."]
+  }
+}
