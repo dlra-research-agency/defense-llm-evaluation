@@ -1,6 +1,6 @@
 # Defense LLM Evaluation Framework
 
-A systematic evaluation framework for benchmarking large language models on defense and intelligence analysis tasks. Developed by the Defence Language Research Agency (DLRA, Singapore), this framework addresses the gap between general-purpose LLM benchmarks and the specialized requirements of national security and defense applications, providing reproducible evaluation pipelines for threat classification, entity extraction, and maritime intelligence analysis.
+A systematic evaluation framework for benchmarking large language models on defense and intelligence analysis tasks. Developed by the Defense Language Research Agency (DLRA, Singapore), this framework addresses the gap between general-purpose LLM benchmarks and the specialized requirements of national security and defense applications, providing reproducible evaluation pipelines for threat classification, entity extraction, and maritime intelligence analysis.
 
 ## Relationship to Defense NLP Benchmarks
 
