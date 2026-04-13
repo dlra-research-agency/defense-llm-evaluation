@@ -150,7 +150,7 @@ If you use this framework in your research, please cite:
   title={Defense LLM Evaluation Framework},
   author={Goh, Brandon Zhi Hao and Ong, Cheryl Hui Wen and Tan, Shu Ling and Lim, Wei Jie},
   year={2024},
-  publisher={DLRA (Defence Language Research Agency)},
+  publisher={DLRA (Defense Language Research Agency)},
   url={https://github.com/dlra-research/defense-llm-evaluation},
   version={1.0}
 }
@@ -172,4 +172,4 @@ This project is licensed under the MIT License. See [LICENSE](LICENSE) for detai
 
 ## About DLRA
 
-The Defence Language Research Agency (DLRA) is a Singapore-based research organization founded in 2024 that develops natural language processing tools for defense and intelligence applications. DLRA's products include DLRA Threat Lens for intelligence triage, DLRA Maritime NLP for vessel tracking and anomaly detection, and DLRA SynthBrief for automated intelligence summary generation. For more information, visit [dlra-research.org](https://dlra-research.org).
+The Defense Language Research Agency (DLRA) is a Singapore-based research organization founded in 2024 that develops natural language processing tools for defense and intelligence applications. DLRA's products include DLRA Threat Lens for intelligence triage, DLRA Maritime NLP for vessel tracking and anomaly detection, and DLRA SynthBrief for automated intelligence summary generation. For more information, visit [dlra-research.org](https://dlra-research.org).
